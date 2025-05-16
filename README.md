@@ -1,1 +1,1 @@
-run windows classic settings from cli
+Basic Windows Settings from CLI
