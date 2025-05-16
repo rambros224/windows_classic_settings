@@ -1,6 +1,7 @@
 import subprocess
+import os
 
-help="classic apps:\n1. classic settings (control)\n2. classic uninstall (appwiz.cpl)\n3. system properties (advanced)\n4. device amanger (diskmgmt.msc)\n5. classic network-connections (ncpa.cpl)\n6. firewall advanced settings (wf.msc)\n7. local group policy editor (pro/enterprise) (gpedit.msc)\n8. task scheduler taskschd.msc\n9. service manager (services.msc)\n10. performance manager (perfmon)\n11. windows memory diagnostic (mdsched.exe)\nL. list again"
+help="classic apps:\n1. classic settings (control)\n2. classic uninstall (appwiz.cpl)\n3. system properties (advanced)\n4. device amanger (diskmgmt.msc)\n5. classic network-connections (ncpa.cpl)\n6. firewall advanced settings (wf.msc)\n7. local group policy editor (pro/enterprise) (gpedit.msc)\n8. task scheduler taskschd.msc\n9. service manager (services.msc)\n10. performance manager (perfmon)\n11. windows memory diagnostic (mdsched.exe)\nL. list again\nQ. exit"
 print(help)
 while True:
     uinput=input(":")
@@ -31,5 +32,7 @@ while True:
         subprocess.run("mdsched.exe", shell=True)
     elif uinput.upper()=="L":
         print(help)
+    elif uinput.upper()=="Q":
+        os._exit(0)
     else:
         print("invalid input")
